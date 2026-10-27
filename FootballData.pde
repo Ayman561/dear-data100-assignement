@@ -3,7 +3,7 @@ Table footballData;
 FootballObservation[] observations;
 
 void setup() {
-  size(800, 650);
+  size(800, 850);
   footballData = loadTable("football_data.csv", "header");
 
   observations = new FootballObservation[footballData.getRowCount()];
@@ -30,7 +30,7 @@ void setup() {
     String activity = observations[i].activity.toLowerCase();
 
     float x = 50 + (i % 10) * 70;
-    float y = 170 + (i / 10) * 35;
+    float y = 170 + (i / 10) * 25;
 
     if (activity.contains("score")) {
       fill(70, 150, 255);
@@ -66,4 +66,6 @@ void setup() {
   ellipse(365, 570, 12, 12);
   fill(255);
   text("Other", 380, 575);
+  
+  save("football_visualisation.png");
 }
